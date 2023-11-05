@@ -1,2 +1,8 @@
-import { Formik } from 'formik';
-import * as Yup from 'yup';
+export const Filter = () => {
+  return (
+    <div>
+      <p>Find contacts by name</p>
+      <input type="text" name="filter" />
+    </div>
+  );
+};

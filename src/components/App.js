@@ -3,11 +3,12 @@ import { nanoid } from 'nanoid';
 import { Component } from 'react';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Contacts } from './Contacts/Contacts';
+import { Filter } from './Filter/Filter';
 
 export class App extends Component {
   state = {
     contacts: [],
-    name: '',
+    filter: '',
   };
 
   addContact = newContact => {
@@ -33,6 +34,7 @@ export class App extends Component {
       <div>
         <ContactForm onAdd={this.addContact} />
         <h2>Contacts</h2>
+        <Filter />
         <Contacts items={contacts} onDelete={this.deleteContact} />
         <GlobalStyle />
       </div>
