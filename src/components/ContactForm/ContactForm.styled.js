@@ -6,7 +6,6 @@ import {
 import styled from 'styled-components';
 
 export const FormContainer = styled.div`
-  justify-content: center;
   max-width: 600px;
   padding: 16px 32px;
   margin: 0 auto;
@@ -16,7 +15,6 @@ export const Form = styled(FormikForm)`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 320px;
 `;
 
 export const Field = styled(FormikField)`
@@ -41,7 +39,6 @@ export const FormButton = styled.button`
   min-width: 100px;
   color: ${p => p.theme.colors.black};
   background-color: ${p => p.theme.colors.background};
-  border: none;
   border-radius: ${p => p.theme.radii.lg};
   padding: 16px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);

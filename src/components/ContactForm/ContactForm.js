@@ -11,14 +11,19 @@ import {
 
 const formSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too Short!').required('Required'),
-  number: Yup.number().min(3, 'At least 3').required('Required'),
+  number: Yup.string()
+    .matches(
+      /^(\d{2,}-\d{2,}-\d{2,}|\d{2,}-\d{2,}|\d{5,})$/,
+      'Phone number is not valid. Min 7 numbers (101-01-01)'
+    )
+    .required('Required'),
 });
 
 export const ContactForm = ({ onAdd }) => {
   return (
     <FormContainer>
       <Formik
-        initialValues={{ name: '', number: 0 }}
+        initialValues={{ name: '', number: '' }}
         validationSchema={formSchema}
         onSubmit={(values, actions) => {
           onAdd(values);
